@@ -17,15 +17,15 @@ namespace Users
             int input = int.Parse(Console.ReadLine());
             Console.WriteLine();
 
+            Console.Write("Enter your username: ");
+            string username = Console.ReadLine();
+
+            Console.Write("Enter your password: ");
+            string password = Console.ReadLine();
+            Console.WriteLine();
+
             if (input == 1)
             {
-                Console.Write("Enter your username: ");
-                string username = Console.ReadLine();
-
-                Console.Write("Enter your password: ");
-                string password = Console.ReadLine();
-                Console.WriteLine();
-
                 Host newHost = new Host(username, password);
 
                 WriteOptions();
@@ -72,8 +72,8 @@ namespace Users
                             question = Console.ReadLine();
                             Console.WriteLine();
 
-                            Console.WriteLine("Enter the answers you want to add.");                            
-                            
+                            Console.WriteLine("Enter the answers you want to add.");
+
                             for (int i = 0; i < 4; i++)
                             {
                                 Console.Write("Answer {0}: ", i);
@@ -118,7 +118,7 @@ namespace Users
                             Console.WriteLine();
 
                             StreamReader streamReader = new StreamReader(@"...\\...\\...\\Questionnaires\\Questionnary " + questionnaireNumber + @"\\Question " + questionNumber + ".txt");
-                            
+
                             using (streamReader)
                             {
                                 Console.WriteLine("This is the current question: ");
@@ -126,7 +126,7 @@ namespace Users
                                 question = streamReader.ReadToEnd();
                                 Console.WriteLine(question);
                             }
-                            
+
                             newHost.DeleteQuestion(questionnaireNumber, questionNumber);
 
                             Console.Write("Enter the edited question you want to add: ");
@@ -135,7 +135,7 @@ namespace Users
 
                             Console.WriteLine("Enter the edited answers you want to add.");
                             answers = new List<string>();
-                            
+
                             for (int i = 0; i < 4; i++)
                             {
                                 Console.Write("Answer {0}: ", i);
@@ -162,7 +162,7 @@ namespace Users
 
                             Directory.Delete(@"...\\...\\...\\Questionnaires\\Questionnary " + questionnaireNumber, true);
                             WriteOptions();
-                            
+
                             break;
 
                         default:
@@ -176,7 +176,55 @@ namespace Users
 
             else
             {
+                Player newPlayer = new Player(username, password);
+                int[] prizes = { 0, 100, 200, 300, 500, 1000, 2000, 4000, 8000, 16000, 32000, 64000, 125000, 250000, 500000, 1000000 };
 
+                Console.Write("Enter the number of the questionnaire you want to take: ");
+                int questionnaireNumber = int.Parse(Console.ReadLine());
+
+                int questionsCount = Directory.GetFiles(@"...\\...\\...\\Questionnaires\\Questionnary " + questionnaireNumber).Length;
+
+                for (int questionNumber = 0; questionNumber < questionsCount; questionNumber++)
+                {
+                    Console.Clear();
+
+                    StreamReader streamReader = new StreamReader(@"...\\...\\...\\Questionnaires\\Questionnary " + questionnaireNumber + @"\\Question " + questionNumber + ".txt");
+                    string correctAnswerLine = File.ReadLines(@"...\\...\\...\\Questionnaires\\Questionnary " + questionnaireNumber + @"\\Question " + questionNumber + ".txt").Skip(5).Take(1).First().Trim();
+                    string correctAnswer = correctAnswerLine[correctAnswerLine.Length - 2].ToString();
+
+                    using (streamReader)
+                    {
+                        for (int i = 0; i < 5; i++)
+                        {
+                            Console.WriteLine(streamReader.ReadLine());
+                        }
+                        Console.WriteLine();
+                    }
+
+                    Console.Write("Choose your answer or type \"Stop\" in order to stop your participation with the sum you already have: ");
+                    string answer = Console.ReadLine();
+
+                    if (answer == "Stop")
+                    {
+                        Console.WriteLine("Congratulations, your final prize is {0}!", prizes[questionNumber]);
+                        Console.WriteLine();
+                        break;
+                    }
+
+                    else if (correctAnswer != answer)
+                    {
+                        Console.WriteLine("Sorry, wrong answer! Your final prize is {0}. Better luck next time.", prizes[questionNumber / 5]);
+                        Console.WriteLine();
+                        break;
+                    }
+
+                    else
+                    {
+                        Console.WriteLine("Congratulations, you just won {0}!", prizes[questionNumber + 1]);
+                        Console.WriteLine();
+                        continue;
+                    }
+                }
             }
         }
 

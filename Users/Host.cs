@@ -6,15 +6,11 @@ using WhoWantsToBeAMillionaire;
 
 namespace Users
 {
-    public class Host
+    public class Host : User
     {
-        public string Username { get; set; }
-        public string Password { get; set; }
-
         public Host(string username, string password)
+            : base(username, password)
         {
-            this.Username = username;
-            this.Password = password;
         }
 
         public void CreateQuestionnaire()
