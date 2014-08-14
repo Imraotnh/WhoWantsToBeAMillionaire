@@ -10,7 +10,7 @@
         static void Main(string[] args)
         {
             InteractionMenu menu = new InteractionMenu();
-            menu.TeacherMenu();
+            menu.Menu();
         }
     }
 }

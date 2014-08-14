@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.IO;
+using WhoWantsToBeAMillionaire;
 
 namespace Users
 {
     public class InteractionMenu
     {
-        public void TeacherMenu()
+        public void Menu()
         {
             Console.WriteLine("WELCOME TO THE MENU");
             Console.Write("If you are a teacher, press 1. Elsewhere, press 2: ");
@@ -29,7 +30,7 @@ namespace Users
 
                 WriteOptions();
 
-                Console.WriteLine();                
+                Console.WriteLine();
 
                 Console.Write("Enter your choice: ");
                 input = int.Parse(Console.ReadLine());
@@ -37,34 +38,42 @@ namespace Users
 
                 while (input != 7)
                 {
+                    int questionnaireNumber;
+                    int questionNumber;
+                    string question;
+                    List<string> answers = new List<string>();
+                    short correctAnswer;
+
                     Console.Clear();
 
                     switch (input)
                     {
+
                         case 1:
+
                             newHost.CreateQuestionnaire();
                             Console.WriteLine("Congratulations, the questionnaire was created. Now add questions to it.");
                             Console.WriteLine();
                             WriteOptions();
 
                             break;
+
                         case 2:
+
                             Console.Write("Enter the number of the questionnaire you want to add question to: ");
-                            int questionnaireNumber = int.Parse(Console.ReadLine());
+                            questionnaireNumber = int.Parse(Console.ReadLine());
                             Console.WriteLine();
 
                             Console.Write("Enter the number of the question you want to add: ");
-                            int questionNumber = int.Parse(Console.ReadLine());
+                            questionNumber = int.Parse(Console.ReadLine());
                             Console.WriteLine();
 
                             Console.Write("Enter the question you want to add: ");
-                            string question = Console.ReadLine();
+                            question = Console.ReadLine();
                             Console.WriteLine();
 
-                            Console.WriteLine("Enter the answers you want to add.");
-                            List<string> answers = new List<string>();
-                            Console.WriteLine();
-
+                            Console.WriteLine("Enter the answers you want to add.");                            
+                            
                             for (int i = 0; i < 4; i++)
                             {
                                 Console.Write("Answer {0}: ", i);
@@ -75,12 +84,87 @@ namespace Users
                             Console.WriteLine();
 
                             Console.Write("Enter the number of the correct answer: ");
-                            short correctAnswer = short.Parse(Console.ReadLine());
+                            correctAnswer = short.Parse(Console.ReadLine());
                             Console.WriteLine();
 
                             newHost.CreateQuestion(questionnaireNumber, questionNumber, question, answers, correctAnswer);
                             WriteOptions();
+
                             break;
+
+                        case 3:
+
+                            Console.Write("Enter the number of the questionnaire you want to delete question from: ");
+                            questionnaireNumber = int.Parse(Console.ReadLine());
+                            Console.WriteLine();
+
+                            Console.Write("Enter the number of the question you want to delete: ");
+                            questionNumber = int.Parse(Console.ReadLine());
+                            Console.WriteLine();
+
+                            newHost.DeleteQuestion(questionnaireNumber, questionNumber);
+                            WriteOptions();
+
+                            break;
+
+                        case 4:
+
+                            Console.Write("Enter the number of the questionnaire you want to edit question from: ");
+                            questionnaireNumber = int.Parse(Console.ReadLine());
+                            Console.WriteLine();
+
+                            Console.Write("Enter the number of the question you want to edit: ");
+                            questionNumber = int.Parse(Console.ReadLine());
+                            Console.WriteLine();
+
+                            StreamReader streamReader = new StreamReader(@"...\\...\\...\\Questionnaires\\Questionnary " + questionnaireNumber + @"\\Question " + questionNumber + ".txt");
+                            
+                            using (streamReader)
+                            {
+                                Console.WriteLine("This is the current question: ");
+                                Console.WriteLine();
+                                question = streamReader.ReadToEnd();
+                                Console.WriteLine(question);
+                            }
+                            
+                            newHost.DeleteQuestion(questionnaireNumber, questionNumber);
+
+                            Console.Write("Enter the edited question you want to add: ");
+                            question = Console.ReadLine();
+                            Console.WriteLine();
+
+                            Console.WriteLine("Enter the edited answers you want to add.");
+                            answers = new List<string>();
+                            
+                            for (int i = 0; i < 4; i++)
+                            {
+                                Console.Write("Answer {0}: ", i);
+                                string answer = Console.ReadLine();
+                                answers.Add(answer);
+                            }
+
+                            Console.WriteLine();
+
+                            Console.Write("Enter the number of the correct answer: ");
+                            correctAnswer = short.Parse(Console.ReadLine());
+                            Console.WriteLine();
+
+                            newHost.CreateQuestion(questionnaireNumber, questionNumber, question, answers, correctAnswer);
+                            WriteOptions();
+
+                            break;
+
+                        case 5:
+
+                            Console.Write("Enter the number of the questionnaire you want to delete: ");
+                            questionnaireNumber = int.Parse(Console.ReadLine());
+                            Console.WriteLine();
+
+                            Directory.Delete(@"...\\...\\...\\Questionnaires\\Questionnary " + questionnaireNumber, true);
+                            WriteOptions();
+                            
+                            break;
+
                         default:
                             break;
                     }
@@ -94,8 +178,6 @@ namespace Users
             {
 
             }
-
-
         }
 
         public void WriteOptions()

@@ -32,7 +32,11 @@ namespace Users
             {
                 streamWriter.WriteLine(questionWithAnswer.ToStringWithCorrectAnswer());
             }
+        }
 
+        public void DeleteQuestion(int questionnaireNumber, int questionNumber)
+        {
+            File.Delete(@"...\\...\\...\\Questionnaires\\Questionnary " + questionnaireNumber + @"\\Question " + questionNumber + ".txt");
         }
     }
 }
