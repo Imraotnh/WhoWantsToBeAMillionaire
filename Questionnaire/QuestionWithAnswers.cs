@@ -1,14 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
+﻿namespace WhoWantsToBeAMillionaire
+{
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
 
-namespace WhoWantsToBeAMillionaire
-{    
     public class QuestionWithAnswers
     {
         public string Question { get; set; }
+
         public List<string> Answers { get; set; }
+
         public short? CorrectAnswer { get; set; }
 
         public QuestionWithAnswers(string question, List<string> answers, short correctAnswer)
@@ -25,27 +26,27 @@ namespace WhoWantsToBeAMillionaire
 
         public override string ToString()
         {
-            StringBuilder QuestionWithAnswers = new StringBuilder();
-            QuestionWithAnswers.Append(this.Question + "\n");
+            StringBuilder questionWithAnswers = new StringBuilder();
+            questionWithAnswers.Append(this.Question + "\n");
 
             int answersCount = this.Answers.Count;
 
             for (int i = 0; i < answersCount; i++)
             {
-                QuestionWithAnswers.Append((char)(65 + i) + ") " + this.Answers[i] + "\n");
+                questionWithAnswers.Append((char)(65 + i) + ") " + this.Answers[i] + "\n");
             }
             
-            return QuestionWithAnswers.ToString();
+            return questionWithAnswers.ToString();
         }
 
         public string ToStringWithCorrectAnswer()
         {
-            StringBuilder QuestionWithAnswersAndCorrectAnswer = new StringBuilder();
-            QuestionWithAnswersAndCorrectAnswer.Append(this.ToString());
+            StringBuilder questionWithAnswersAndCorrectAnswer = new StringBuilder();
+            questionWithAnswersAndCorrectAnswer.Append(this.ToString());
 
-            QuestionWithAnswersAndCorrectAnswer.Append("Correct answer: " + "(" + (char)(65 + this.CorrectAnswer) + ") \n \n");
+            questionWithAnswersAndCorrectAnswer.Append("Correct answer: " + "(" + (char)(65 + this.CorrectAnswer) + ") \n \n");
 
-            return QuestionWithAnswersAndCorrectAnswer.ToString();
+            return questionWithAnswersAndCorrectAnswer.ToString();
         }
     }
 }

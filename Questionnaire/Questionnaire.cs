@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace WhoWantsToBeAMillionaire
+﻿namespace WhoWantsToBeAMillionaire
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
     public class Questionnaire
     {
         public List<QuestionWithAnswers> Questions { get; set; }
@@ -31,30 +30,30 @@ namespace WhoWantsToBeAMillionaire
 
         public override string ToString()
         {
-            StringBuilder Questionnaire = new StringBuilder();
+            StringBuilder questionnaire = new StringBuilder();
 
             int questionsCount = this.Questions.Count;
 
             for (int i = 0; i < questionsCount; i++)
             {
-                Questionnaire.Append(i + ". " + this.Questions[i].ToString() + "\n");                
+                questionnaire.Append(i + ". " + this.Questions[i].ToString() + "\n");                
             }
 
-            return Questionnaire.ToString();
+            return questionnaire.ToString();
         }
 
         public string ToStringWithCorrectAnswers()
         {
-            StringBuilder Questionnaire = new StringBuilder();
+            StringBuilder questionnaire = new StringBuilder();
 
             int questionsCount = this.Questions.Count;
 
             for (int i = 0; i < questionsCount; i++)
             {
-                Questionnaire.Append(i + ". " + this.Questions[i].ToStringWithCorrectAnswer() + "\n");       
+                questionnaire.Append(i + ". " + this.Questions[i].ToStringWithCorrectAnswer() + "\n");       
             }
 
-            return Questionnaire.ToString();            
+            return questionnaire.ToString();            
         }
     }
 }

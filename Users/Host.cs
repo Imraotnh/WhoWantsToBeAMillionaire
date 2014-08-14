@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-using WhoWantsToBeAMillionaire;
-
-namespace Users
+﻿namespace Users
 {
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Text;
+    using WhoWantsToBeAMillionaire;
+
     public class Host : User
     {
         public Host(string username, string password)

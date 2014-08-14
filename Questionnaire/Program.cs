@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace WhoWantsToBeAMillionaire
+﻿namespace WhoWantsToBeAMillionaire
 {
-    class Program
+    using System;
+    using System.Collections.Generic;
+
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             QuestionWithAnswers first = new QuestionWithAnswers("Koy e Boyko?", new List<string>() { "pich", "gay", "desen" }, 2);
             QuestionWithAnswers second = new QuestionWithAnswers("Koy ne e Boyko?", new List<string>() { "pich", "gay", "desen" }, 2);
@@ -16,7 +13,6 @@ namespace WhoWantsToBeAMillionaire
             Console.WriteLine(second);
             Questionnaire quest = new Questionnaire(new List<QuestionWithAnswers>() { });
            
-
             quest.Questions.Add(first);
             quest.Questions.Add(second);
             Console.WriteLine(quest.ToString());

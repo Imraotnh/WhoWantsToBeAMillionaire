@@ -1,18 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.IO;
-using WhoWantsToBeAMillionaire;
-
-namespace Users
+﻿namespace Users
 {
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Linq;
+    using System.Text;    
+    using WhoWantsToBeAMillionaire;
+
     public class InteractionMenu
     {
         public void Menu()
         {
             Console.WriteLine("WELCOME TO THE MENU");
-            Console.Write("If you are a teacher, press 1. Elsewhere, press 2: ");
+            Console.Write("If you are a host, press 1. Elsewhere, press 2: ");
 
             int input = int.Parse(Console.ReadLine());
             Console.WriteLine();
@@ -28,7 +28,7 @@ namespace Users
             {
                 Host newHost = new Host(username, password);
 
-                WriteOptions();
+                this.WriteOptions();
 
                 Console.WriteLine();
 
@@ -48,13 +48,12 @@ namespace Users
 
                     switch (input)
                     {
-
                         case 1:
 
                             newHost.CreateQuestionnaire();
                             Console.WriteLine("Congratulations, the questionnaire was created. Now add questions to it.");
                             Console.WriteLine();
-                            WriteOptions();
+                            this.WriteOptions();
 
                             break;
 
@@ -88,7 +87,7 @@ namespace Users
                             Console.WriteLine();
 
                             newHost.CreateQuestion(questionnaireNumber, questionNumber, question, answers, correctAnswer);
-                            WriteOptions();
+                            this.WriteOptions();
 
                             break;
 
@@ -103,7 +102,7 @@ namespace Users
                             Console.WriteLine();
 
                             newHost.DeleteQuestion(questionnaireNumber, questionNumber);
-                            WriteOptions();
+                            this.WriteOptions();
 
                             break;
 
@@ -150,7 +149,7 @@ namespace Users
                             Console.WriteLine();
 
                             newHost.CreateQuestion(questionnaireNumber, questionNumber, question, answers, correctAnswer);
-                            WriteOptions();
+                            this.WriteOptions();
 
                             break;
 
@@ -161,7 +160,7 @@ namespace Users
                             Console.WriteLine();
 
                             Directory.Delete(@"...\\...\\...\\Questionnaires\\Questionnary " + questionnaireNumber, true);
-                            WriteOptions();
+                            this.WriteOptions();
 
                             break;
 
@@ -173,7 +172,6 @@ namespace Users
                     input = int.Parse(Console.ReadLine());
                 }
             }
-
             else
             {
                 Player newPlayer = new Player(username, password);
@@ -198,6 +196,7 @@ namespace Users
                         {
                             Console.WriteLine(streamReader.ReadLine());
                         }
+
                         Console.WriteLine();
                     }
 
@@ -210,14 +209,12 @@ namespace Users
                         Console.WriteLine();
                         break;
                     }
-
                     else if (correctAnswer != answer)
                     {
                         Console.WriteLine("Sorry, wrong answer! Your final prize is {0}. Better luck next time.", prizes[questionNumber / 5]);
                         Console.WriteLine();
                         break;
                     }
-
                     else
                     {
                         Console.WriteLine("Congratulations, you just won {0}!", prizes[questionNumber + 1]);
