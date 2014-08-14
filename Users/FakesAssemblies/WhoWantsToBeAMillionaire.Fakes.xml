@@ -1,0 +1,200 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WhoWantsToBeAMillionaire.Fakes</name>
+    </assembly>
+    <members>
+        <member name="T:WhoWantsToBeAMillionaire.Fakes.ShimQuestionWithAnswers">
+            <summary>Shim type of WhoWantsToBeAMillionaire.QuestionWithAnswers</summary>
+        </member>
+        <member name="M:WhoWantsToBeAMillionaire.Fakes.ShimQuestionWithAnswers.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:WhoWantsToBeAMillionaire.Fakes.ShimQuestionWithAnswers.#ctor(WhoWantsToBeAMillionaire.QuestionWithAnswers)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:WhoWantsToBeAMillionaire.Fakes.ShimQuestionWithAnswers.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:WhoWantsToBeAMillionaire.Fakes.ShimQuestionWithAnswers.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:WhoWantsToBeAMillionaire.Fakes.ShimQuestionWithAnswers.AnswersGet">
+            <summary>Sets the shim of QuestionWithAnswers.get_Answers()</summary>
+        </member>
+        <member name="P:WhoWantsToBeAMillionaire.Fakes.ShimQuestionWithAnswers.AnswersSetListOfString">
+            <summary>Sets the shim of QuestionWithAnswers.set_Answers(List`1&lt;String&gt; value)</summary>
+        </member>
+        <member name="P:WhoWantsToBeAMillionaire.Fakes.ShimQuestionWithAnswers.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:WhoWantsToBeAMillionaire.Fakes.ShimQuestionWithAnswers.ChangeQuestionString">
+            <summary>Sets the shim of QuestionWithAnswers.ChangeQuestion(String newQuestion)</summary>
+        </member>
+        <member name="P:WhoWantsToBeAMillionaire.Fakes.ShimQuestionWithAnswers.ConstructorStringListOfStringInt16">
+            <summary>Sets the shim of QuestionWithAnswers.QuestionWithAnswers(String question, List`1&lt;String&gt; answers, Int16 correctAnswer)</summary>
+        </member>
+        <member name="P:WhoWantsToBeAMillionaire.Fakes.ShimQuestionWithAnswers.CorrectAnswerGet">
+            <summary>Sets the shim of QuestionWithAnswers.get_CorrectAnswer()</summary>
+        </member>
+        <member name="P:WhoWantsToBeAMillionaire.Fakes.ShimQuestionWithAnswers.CorrectAnswerSetNullableOfInt16">
+            <summary>Sets the shim of QuestionWithAnswers.set_CorrectAnswer(Nullable`1&lt;Int16&gt; value)</summary>
+        </member>
+        <member name="P:WhoWantsToBeAMillionaire.Fakes.ShimQuestionWithAnswers.QuestionGet">
+            <summary>Sets the shim of QuestionWithAnswers.get_Question()</summary>
+        </member>
+        <member name="P:WhoWantsToBeAMillionaire.Fakes.ShimQuestionWithAnswers.QuestionSetString">
+            <summary>Sets the shim of QuestionWithAnswers.set_Question(String value)</summary>
+        </member>
+        <member name="P:WhoWantsToBeAMillionaire.Fakes.ShimQuestionWithAnswers.ToString">
+            <summary>Sets the shim of QuestionWithAnswers.ToString()</summary>
+        </member>
+        <member name="P:WhoWantsToBeAMillionaire.Fakes.ShimQuestionWithAnswers.ToStringWithCorrectAnswer">
+            <summary>Sets the shim of QuestionWithAnswers.ToStringWithCorrectAnswer()</summary>
+        </member>
+        <member name="T:WhoWantsToBeAMillionaire.Fakes.ShimQuestionWithAnswers.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:WhoWantsToBeAMillionaire.Fakes.ShimQuestionWithAnswers.AllInstances.AnswersGet">
+            <summary>Sets the shim of QuestionWithAnswers.get_Answers()</summary>
+        </member>
+        <member name="P:WhoWantsToBeAMillionaire.Fakes.ShimQuestionWithAnswers.AllInstances.AnswersSetListOfString">
+            <summary>Sets the shim of QuestionWithAnswers.set_Answers(List`1&lt;String&gt; value)</summary>
+        </member>
+        <member name="P:WhoWantsToBeAMillionaire.Fakes.ShimQuestionWithAnswers.AllInstances.ChangeQuestionString">
+            <summary>Sets the shim of QuestionWithAnswers.ChangeQuestion(String newQuestion)</summary>
+        </member>
+        <member name="P:WhoWantsToBeAMillionaire.Fakes.ShimQuestionWithAnswers.AllInstances.CorrectAnswerGet">
+            <summary>Sets the shim of QuestionWithAnswers.get_CorrectAnswer()</summary>
+        </member>
+        <member name="P:WhoWantsToBeAMillionaire.Fakes.ShimQuestionWithAnswers.AllInstances.CorrectAnswerSetNullableOfInt16">
+            <summary>Sets the shim of QuestionWithAnswers.set_CorrectAnswer(Nullable`1&lt;Int16&gt; value)</summary>
+        </member>
+        <member name="P:WhoWantsToBeAMillionaire.Fakes.ShimQuestionWithAnswers.AllInstances.QuestionGet">
+            <summary>Sets the shim of QuestionWithAnswers.get_Question()</summary>
+        </member>
+        <member name="P:WhoWantsToBeAMillionaire.Fakes.ShimQuestionWithAnswers.AllInstances.QuestionSetString">
+            <summary>Sets the shim of QuestionWithAnswers.set_Question(String value)</summary>
+        </member>
+        <member name="P:WhoWantsToBeAMillionaire.Fakes.ShimQuestionWithAnswers.AllInstances.ToString01">
+            <summary>Sets the shim of QuestionWithAnswers.ToString()</summary>
+        </member>
+        <member name="P:WhoWantsToBeAMillionaire.Fakes.ShimQuestionWithAnswers.AllInstances.ToStringWithCorrectAnswer">
+            <summary>Sets the shim of QuestionWithAnswers.ToStringWithCorrectAnswer()</summary>
+        </member>
+        <member name="T:WhoWantsToBeAMillionaire.Fakes.ShimQuestionnaire">
+            <summary>Shim type of WhoWantsToBeAMillionaire.Questionnaire</summary>
+        </member>
+        <member name="M:WhoWantsToBeAMillionaire.Fakes.ShimQuestionnaire.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:WhoWantsToBeAMillionaire.Fakes.ShimQuestionnaire.#ctor(WhoWantsToBeAMillionaire.Questionnaire)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:WhoWantsToBeAMillionaire.Fakes.ShimQuestionnaire.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:WhoWantsToBeAMillionaire.Fakes.ShimQuestionnaire.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:WhoWantsToBeAMillionaire.Fakes.ShimQuestionnaire.AddQuestionQuestionWithAnswers">
+            <summary>Sets the shim of Questionnaire.AddQuestion(QuestionWithAnswers question)</summary>
+        </member>
+        <member name="P:WhoWantsToBeAMillionaire.Fakes.ShimQuestionnaire.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:WhoWantsToBeAMillionaire.Fakes.ShimQuestionnaire.ClearQuestionnaire">
+            <summary>Sets the shim of Questionnaire.ClearQuestionnaire()</summary>
+        </member>
+        <member name="P:WhoWantsToBeAMillionaire.Fakes.ShimQuestionnaire.ConstructorListOfQuestionWithAnswers">
+            <summary>Sets the shim of Questionnaire.Questionnaire(List`1&lt;QuestionWithAnswers&gt; questions)</summary>
+        </member>
+        <member name="P:WhoWantsToBeAMillionaire.Fakes.ShimQuestionnaire.DeleteQuestionInt32">
+            <summary>Sets the shim of Questionnaire.DeleteQuestion(Int32 index)</summary>
+        </member>
+        <member name="P:WhoWantsToBeAMillionaire.Fakes.ShimQuestionnaire.QuestionsGet">
+            <summary>Sets the shim of Questionnaire.get_Questions()</summary>
+        </member>
+        <member name="P:WhoWantsToBeAMillionaire.Fakes.ShimQuestionnaire.QuestionsSetListOfQuestionWithAnswers">
+            <summary>Sets the shim of Questionnaire.set_Questions(List`1&lt;QuestionWithAnswers&gt; value)</summary>
+        </member>
+        <member name="P:WhoWantsToBeAMillionaire.Fakes.ShimQuestionnaire.ToString">
+            <summary>Sets the shim of Questionnaire.ToString()</summary>
+        </member>
+        <member name="P:WhoWantsToBeAMillionaire.Fakes.ShimQuestionnaire.ToStringWithCorrectAnswers">
+            <summary>Sets the shim of Questionnaire.ToStringWithCorrectAnswers()</summary>
+        </member>
+        <member name="T:WhoWantsToBeAMillionaire.Fakes.ShimQuestionnaire.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:WhoWantsToBeAMillionaire.Fakes.ShimQuestionnaire.AllInstances.AddQuestionQuestionWithAnswers">
+            <summary>Sets the shim of Questionnaire.AddQuestion(QuestionWithAnswers question)</summary>
+        </member>
+        <member name="P:WhoWantsToBeAMillionaire.Fakes.ShimQuestionnaire.AllInstances.ClearQuestionnaire">
+            <summary>Sets the shim of Questionnaire.ClearQuestionnaire()</summary>
+        </member>
+        <member name="P:WhoWantsToBeAMillionaire.Fakes.ShimQuestionnaire.AllInstances.DeleteQuestionInt32">
+            <summary>Sets the shim of Questionnaire.DeleteQuestion(Int32 index)</summary>
+        </member>
+        <member name="P:WhoWantsToBeAMillionaire.Fakes.ShimQuestionnaire.AllInstances.QuestionsGet">
+            <summary>Sets the shim of Questionnaire.get_Questions()</summary>
+        </member>
+        <member name="P:WhoWantsToBeAMillionaire.Fakes.ShimQuestionnaire.AllInstances.QuestionsSetListOfQuestionWithAnswers">
+            <summary>Sets the shim of Questionnaire.set_Questions(List`1&lt;QuestionWithAnswers&gt; value)</summary>
+        </member>
+        <member name="P:WhoWantsToBeAMillionaire.Fakes.ShimQuestionnaire.AllInstances.ToString01">
+            <summary>Sets the shim of Questionnaire.ToString()</summary>
+        </member>
+        <member name="P:WhoWantsToBeAMillionaire.Fakes.ShimQuestionnaire.AllInstances.ToStringWithCorrectAnswers">
+            <summary>Sets the shim of Questionnaire.ToStringWithCorrectAnswers()</summary>
+        </member>
+        <member name="T:WhoWantsToBeAMillionaire.Fakes.StubQuestionWithAnswers">
+            <summary>Stub type of WhoWantsToBeAMillionaire.QuestionWithAnswers</summary>
+        </member>
+        <member name="M:WhoWantsToBeAMillionaire.Fakes.StubQuestionWithAnswers.#ctor(System.String,System.Collections.Generic.List{System.String},System.Int16)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:WhoWantsToBeAMillionaire.Fakes.StubQuestionWithAnswers.InitializeStub">
+            <summary>Initializes a new instance of type StubQuestionWithAnswers</summary>
+        </member>
+        <member name="M:WhoWantsToBeAMillionaire.Fakes.StubQuestionWithAnswers.ToString">
+            <summary>Sets the stub of QuestionWithAnswers.ToString()</summary>
+        </member>
+        <member name="F:WhoWantsToBeAMillionaire.Fakes.StubQuestionWithAnswers.ToString01">
+            <summary>Sets the stub of QuestionWithAnswers.ToString()</summary>
+        </member>
+        <member name="P:WhoWantsToBeAMillionaire.Fakes.StubQuestionWithAnswers.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:WhoWantsToBeAMillionaire.Fakes.StubQuestionWithAnswers.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:WhoWantsToBeAMillionaire.Fakes.StubQuestionWithAnswers.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:WhoWantsToBeAMillionaire.Fakes.StubQuestionnaire">
+            <summary>Stub type of WhoWantsToBeAMillionaire.Questionnaire</summary>
+        </member>
+        <member name="M:WhoWantsToBeAMillionaire.Fakes.StubQuestionnaire.#ctor(System.Collections.Generic.List{WhoWantsToBeAMillionaire.QuestionWithAnswers})">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:WhoWantsToBeAMillionaire.Fakes.StubQuestionnaire.InitializeStub">
+            <summary>Initializes a new instance of type StubQuestionnaire</summary>
+        </member>
+        <member name="M:WhoWantsToBeAMillionaire.Fakes.StubQuestionnaire.ToString">
+            <summary>Sets the stub of Questionnaire.ToString()</summary>
+        </member>
+        <member name="F:WhoWantsToBeAMillionaire.Fakes.StubQuestionnaire.ToString01">
+            <summary>Sets the stub of Questionnaire.ToString()</summary>
+        </member>
+        <member name="P:WhoWantsToBeAMillionaire.Fakes.StubQuestionnaire.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:WhoWantsToBeAMillionaire.Fakes.StubQuestionnaire.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:WhoWantsToBeAMillionaire.Fakes.StubQuestionnaire.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+    </members>
+</doc>
