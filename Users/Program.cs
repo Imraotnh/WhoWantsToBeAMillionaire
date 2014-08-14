@@ -9,9 +9,8 @@
     {
         static void Main(string[] args)
         {
-            Teacher ayshe = new Teacher("ayshe", "hasan");
-            ayshe.CreateQuestionnaire();
-            ayshe.CreateQuestion(2, 3, "Kak si", new List<string> { "dobre", "stava", "zle" }, 2);
+            InteractionMenu menu = new InteractionMenu();
+            menu.TeacherMenu();
         }
     }
 }
