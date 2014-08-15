@@ -18,12 +18,7 @@
             this.Answers = answers;
             this.CorrectAnswer = correctAnswer;
         }
-
-        public void ChangeQuestion(string newQuestion)
-        {            
-            this.Question = newQuestion;
-        }
-
+        
         public override string ToString()
         {
             StringBuilder questionWithAnswers = new StringBuilder();

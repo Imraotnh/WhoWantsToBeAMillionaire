@@ -4,7 +4,8 @@
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
-    using System.Text;    
+    using System.Text;
+    using System.Threading;
     using WhoWantsToBeAMillionaire;
 
     public class InteractionMenu
@@ -19,14 +20,11 @@
 
             Console.Write("Enter your username: ");
             string username = Console.ReadLine();
-
-            Console.Write("Enter your password: ");
-            string password = Console.ReadLine();
             Console.WriteLine();
 
             if (input == 1)
             {
-                Host newHost = new Host(username, password);
+                Host newHost = new Host(username);
 
                 this.WriteOptions();
 
@@ -164,6 +162,19 @@
 
                             break;
 
+                        case 6:
+
+                            StreamReader resultsList = new StreamReader(@"...\\...\\...\\results.txt");
+
+                            using (resultsList)
+                            {
+                                string results = resultsList.ReadToEnd();
+                                Console.WriteLine(results);
+                            }
+                            this.WriteOptions();
+
+                            break;
+
                         default:
                             break;
                     }
@@ -174,7 +185,7 @@
             }
             else
             {
-                Player newPlayer = new Player(username, password);
+                Player newPlayer = new Player(username);
                 int[] prizes = { 0, 100, 200, 300, 500, 1000, 2000, 4000, 8000, 16000, 32000, 64000, 125000, 250000, 500000, 1000000 };
 
                 Console.Write("Enter the number of the questionnaire you want to take: ");
@@ -206,20 +217,32 @@
                     if (answer == "Stop")
                     {
                         Console.WriteLine("Congratulations, your final prize is {0}!", prizes[questionNumber]);
+                        newPlayer.WriteResult(prizes[questionNumber], username);
                         Console.WriteLine();
                         break;
                     }
                     else if (correctAnswer != answer)
                     {
-                        Console.WriteLine("Sorry, wrong answer! Your final prize is {0}. Better luck next time.", prizes[questionNumber / 5]);
+                        Console.WriteLine("Sorry, wrong answer! Your final prize is {0}. Better luck next time.", prizes[(questionNumber / 5) * 5]);
+                        newPlayer.WriteResult(prizes[(questionNumber / 5) * 5], username);
                         Console.WriteLine();
                         break;
                     }
-                    else
+
+                    else if (questionNumber != questionsCount - 1)
                     {
                         Console.WriteLine("Congratulations, you just won {0}!", prizes[questionNumber + 1]);
                         Console.WriteLine();
+                        Thread.Sleep(2000);
+
                         continue;
+                    }
+
+                    else
+                    {
+                        Console.WriteLine("Congratulations, you just our biggest price of {0}!", prizes[questionsCount]);
+                        newPlayer.WriteResult(prizes[questionsCount], username);
+                        Thread.Sleep(2000);
                     }
                 }
             }

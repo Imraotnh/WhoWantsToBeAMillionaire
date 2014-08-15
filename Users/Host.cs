@@ -8,8 +8,8 @@
 
     public class Host : User
     {
-        public Host(string username, string password)
-            : base(username, password)
+        public Host(string username)
+            : base(username)
         {
         }
 
